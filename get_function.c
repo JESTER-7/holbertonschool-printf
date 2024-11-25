@@ -8,6 +8,8 @@ int (*get_function(char *s))(va_list)
 		{"c", character},
 		{"s", string},
 		{"%", percent},
+        {"d", integer},
+        {"i", integerten},
 		{NULL, NULL}
 	};
 	int i = 0;
