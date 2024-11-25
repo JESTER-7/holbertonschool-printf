@@ -1,8 +1,10 @@
 #include "main.h"
+
 /**
  * get_slash - print a \ or a \?
  * @c: the character
  */
+
 int get_slash(char c)
 {
 	if (c == 'n')

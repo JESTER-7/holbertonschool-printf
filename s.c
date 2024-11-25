@@ -2,7 +2,9 @@
 /**
  * 
  */
-int string(va_list)
+int string(va_list ap)
 {
-    
+	(void)ap;
+    putchar('X');
+	return (0);
 }

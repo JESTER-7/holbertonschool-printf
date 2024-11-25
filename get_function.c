@@ -1,8 +1,11 @@
 #include "main.h"
+#include <stdarg.h>
+
 /**
  * 
  */
-int (*get_function(char *s))(va_list)
+
+int (*get_function(char s))(va_list)
 {
 	print array[] = {
 		{"c", character},
@@ -14,7 +17,7 @@ int (*get_function(char *s))(va_list)
 	};
 	int i = 0;
 
-	if (array[i].op != NULL && *(array[i].op) == *s)
+	if (array[i].op != NULL && *(array[i].op) == s)
 			return (array[i].f);
-	return (NULL);
+	return (0);
 }
