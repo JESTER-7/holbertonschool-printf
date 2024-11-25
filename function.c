@@ -1,10 +1,14 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * _printf - litteraly printf
- * @format: 
+ * @format: the string to be printed
+ *
+ * Return: number of characyers printed
  */
+
 int _printf(const char *format, ...)
 {
 	int i = 0;
@@ -20,16 +24,18 @@ int _printf(const char *format, ...)
 		if (format[i] == '\\')
 		{
 			i++;
-			compteur = compteur + get_slash(i);
+			compteur += get_slash(i);
 		}
 		else if (format[i] == '%')
 		{
 			i++;
 			function = get_function(format[i]);
-			result_function = function(ap);
-			compteur = result_function + compteur;
-			if (result_function == 0)
+			if (function == NULL)
 				exit(99);
+			result_function = function(ap);
+			if (result_function == -1)
+				exit(99);
+			compteur += result_function;
 		}
 		else
 		{

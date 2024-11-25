@@ -17,7 +17,8 @@ int get_slash(char);
 
 typedef struct printf
 {
-	char *op;
+	char op;
 	int (*f)(va_list p);
 } print;
+
 #endif
