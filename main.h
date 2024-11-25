@@ -10,6 +10,7 @@ int integer(va_list);
 int integerten(va_list);
 int character(va_list);
 int string(va_list);
+int get_slash(char);
 
 typedef struct printf
 {
