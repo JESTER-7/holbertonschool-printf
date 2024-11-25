@@ -13,23 +13,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '\\')
 		{
 			i = i + 1;
-			if (format[i] == 'n')
-				_putchar('\n');
-			else if (format[i] == 'a')
-				_putchar('\a');
-			else if (format[i] == 'b')
-				_putchar('\b');
-			else if (format[i] == 'f')
-				_putchar('\f');
-			else if (format[i] == 'r')
-				_putchar('\r');
-			else if (format[i] == 't')
-				_putchar('\t');
-			else if (format[i] == 'v')
-				_putchar('\v');
-			else
-				_putchar(format[i]);
-			compteur++;
+			compteur = compteur + get_slash(i);
 		}
 		else if (format[i] == '%')
 		{
