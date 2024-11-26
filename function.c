@@ -13,9 +13,14 @@ int _printf(const char *format, ...)
 {
 	int i = 0;
 	int compteur = 0;
-	int result_function = 0;
-	int (*function)(va_list);
+	int result_f = 0;
+	int result_ff = 0;
+	int (*f)(va_list);
+	int (*ff)(void);
 	va_list ap;
+
+	if (format == NULL)
+		exit(99);
 
 	va_start(ap, format);
 
@@ -24,18 +29,22 @@ int _printf(const char *format, ...)
 		if (format[i] == '\\')
 		{
 			i++;
-			compteur += get_slash(i);
+			ff = get_slash(format[i]);
+			if (ff == NULL)
+				exit(99);
+			result_ff = ff();
+			compteur += result_ff;
 		}
 		else if (format[i] == '%')
 		{
 			i++;
-			function = get_function(format[i]);
-			if (function == NULL)
+			f = get_function(format[i]);
+			if (f == NULL)
 				exit(99);
-			result_function = function(ap);
-			if (result_function == -1)
+			result_f = f(ap);
+			if (result_f == -1)
 				exit(99);
-			compteur += result_function;
+			compteur += result_f;
 		}
 		else
 		{

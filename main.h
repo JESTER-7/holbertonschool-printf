@@ -13,12 +13,29 @@ int integer(va_list);
 int integerten(va_list);
 int character(va_list);
 int string(va_list);
-int get_slash(char);
+int (*get_slash(char c))(void);
+
+int slashn(void);
+int slasha(void);
+int slashb(void);
+int slashf(void);
+int slashr(void);
+int slasht(void);
+int slashv(void);
+int slashslash(void);
+int slashdoublequote(void);
+int slashsinglequote(void);
 
 typedef struct printf
 {
 	char op;
 	int (*f)(va_list p);
 } print;
+
+typedef struct slashstruc
+{
+	char op;
+	int (*f)(void);
+} slash;
 
 #endif
