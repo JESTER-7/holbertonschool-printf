@@ -10,7 +10,7 @@
 
 int string(va_list ap)
 {
-	char *str = va_arg(ap, char*);
+	char *str = va_arg(ap, char *);
 	int i;
 
 	if (str != NULL)
