@@ -1,23 +1,85 @@
 .TH _PRINTF
 
 .SH NAME
-myprogram - a tool for processing data files
+_PRINTF - a tool for printing data to the standard output
 
-
-.TH myprogram 1 "November 2024" "1.0" "MyProgram Manual"
-.SH NAME
-myprogram - a brief description of your program
 .SH SYNOPSIS
-.B myprogram
-.RI [ options ] " arguments"
+.B _printf
+.RI (FORMAT, [ARGUMENT...])
+
 .SH DESCRIPTION
-This is a detailed description of your program. Include options, arguments, and examples.
-.SH OPTIONS
+The _printf function takes a first argument (FORMAT) and prints it, as such, to the standard output. 
+.br
+When a format specifier (recognisable with % sign) is encountered in this first argument, the format specifier
+.br
+will be exchanged with the next argument, in the ARGUMENT list.
+.br
+The _prinf functions returns the number of printed characters
+
+.sp
+The format specifiers are:
+.br
+%c will be replaced by the next argument in the argument list, which is expected to be a character
+.br
+%s will be replaced by the next argument in the argument list, which is expected to be a string
+.br
+%d will be replaced by the next argument in the argument list, which is expected to be an integer
+.br
+%i will be replaced by the next argument in the argument list, which is expected to be an integer base ten
+.sp
+If a %% is encountered, a single % will be printed
+.sp
+\\ is used as the escape character :
+.br
+If the escape character is used just in front of special characters such as \\, ", ' these charcaters lose their special meaning and will be printed as such.
+.br
+On the contrary, the escape character can also be used with some letters to add some special behaviour:
+.br
+\\n will go to the next line
+.br
+\\a creates an alerte with a beep sound
+.br
+\\b backspace
+.br
+\\f moves cursor to next page
+.br
+\\r moves cursor to beginning of the current line
+.br
+\\t tab
+.br
+\\v moves cursor to next vertical stop
+
+.SH EXAMPLES
 .TP
-.B -h, --help
-Display help information.
+_printf("Test");
+will print Test to the stdout
+
 .TP
-.B -v, --version
-Show version information.
+_printf("%s", "Test");
+will do the same thing
+
+.TP
+char *name = "Joe";
+.sp -1
+.TP
+_printf("My name is %s.", name);
+will print My name is Joe. to the stdout
+
+.TP
+char age = 20;
+.sp -1
+.TP
+_printf("I'm %d yeard old.", age);
+will print I'm 20 years old. to the stdout
+
+
+.SH EXIT STATUS
+.TP
+.B On success
+The functions returns the number of bytes printed
+.TP
+.B On error 
+The program exits with code 99 on error
+
 .SH AUTHOR
-Your Name <your.email@example.com>
+Written by Arthur Urbano <9323@holbertonstudents.com> & Korneel Loy <9795@holbertonstudents.com>
