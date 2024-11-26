@@ -4,7 +4,7 @@
  * @ap: list with variadic arguments, expected to a be int
  * Return: i
  */
-int integer(va_list ap)
+int integerten(va_list ap)
 {
 	int integer = va_arg(ap, int);
 	int i = 0;
@@ -28,7 +28,7 @@ int integer(va_list ap)
  * @integer: integer
  * Return: i
  */
-int print_integer(int integer)
+int print_integerten(int integer)
 {
 	int i = 0;
 
