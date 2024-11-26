@@ -1,1 +1,5 @@
-# holbertonschool-printf
+#titre PRINTF FUNCTION
+##titre Plan
+What the functin do
+The compilation
+`$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c`
