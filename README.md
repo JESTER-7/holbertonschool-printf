@@ -7,26 +7,28 @@
 #### 5 - Man page
 #### 6 - Flowchart
 
-### **Description**
+## **Description**
 The printf project ask us to recreate the printf function, in particular these conversion specifiers :
-`%c`
-`%s`
-`%d`
-`%i`
-`%%`
+* `%c`: Print a char
+* `%s`: Print a string
+* `%d`: Print an integer
+* `%i`: Print an integer base 10
+* `%%`: Print %
+We also do a man page, we will see it later int the readme. 
 
-### **Compilation command**
+## **Compilation command**
 The program will be compiled with this function :
-`$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c`
-
-### **Requirements**
+```c
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c`
+```
+## **Requirements**
 * Allowed editors: vi, vim, emacs
 * All your files will be compiled on Ubuntu 20.04 LTS using gcc
 * Your code should use the Betty style.
 * You are not allowed to use global variables
 * No more than 5 functions per file (the reason of the 2 slach files)
 
-### **Exemples**
+## **Exemples**
 Here we can see the printf function print a string :
 ```#include <main.h>
 /**
@@ -39,7 +41,7 @@ int main (void)
     _printf("%d", i);
     Return (0);
 }
-stdout: 78````
+stdout: 78```
 
 #### *Authors*
 Korneel Loy - Arthur Urbano
