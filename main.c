@@ -112,8 +112,10 @@ int test(void)
 
 	/** Testing unknown value after %*/
 	printf("\n");
-	_printf("Unknown:[%r]\n");
-	printf("Unknown:[%r]\n");
+	len = _printf("Unknown:[%r]\n");
+	len2 = printf("Unknown:[%r]\n");
+	printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
 
 	/** Testing format = NULL */
 	printf("\n");
@@ -128,6 +130,10 @@ int test(void)
 	len2 = _printf("Try to print a single quote \'\n");
 	printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+
+	/** Testing b */
+	printf("\n");
+	_printf("%b\n", 101);
 
     return (0);
 }

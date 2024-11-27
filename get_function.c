@@ -17,6 +17,7 @@ int (*get_function(char s))(va_list)
 		{'%', percent},
 		{'d', integer},
 		{'i', integerten},
+		{'b', int_to_binary},
 		{'\0', NULL}
 	};
 	int i;

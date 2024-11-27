@@ -16,6 +16,7 @@ int string(va_list);
 int (*get_slash(char c))(void);
 int print_integer(int integer);
 int print_integerten(int integer);
+int int_to_binary(va_list ap);
 
 int slashn(void);
 int slasha(void);
