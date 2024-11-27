@@ -12,11 +12,7 @@ int character(va_list ap)
 {
 	char letter;
 
-	if (ap != NULL)
-	{
-		letter = va_arg(ap, int);
-		_putchar(letter);
-		return (1);
-	}
-	return (-1);
+	letter = va_arg(ap, int);
+	_putchar(letter);
+	return (1);
 }

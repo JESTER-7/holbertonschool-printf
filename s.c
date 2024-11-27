@@ -13,11 +13,10 @@ int string(va_list ap)
 	char *str = va_arg(ap, char *);
 	int i;
 
-	if (str != NULL)
-	{
-		for (i = 0; str[i] != '\0'; i++)
-			_putchar(str[i]);
-		return (i);
-	}
-	return (-1);
+	if (str == NULL)
+		str = "(null)";
+	
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+	return (i);
 }

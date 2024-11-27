@@ -66,10 +66,31 @@ int test(void)
 	_printf("Character:[%c]\n", 'H');
 	printf("Character:[%c]\n", 'H');
 
-	/** Testing S - string */
+	/** Testing S with specifier- string + return value */
 	printf("\n");
-	_printf("String:[%s]\n", "I am a string !");
-	printf("String:[%s]\n", "I am a string !");
+	len = _printf("String:[%s]\n", "I am a string !");
+	len2 = printf("String:[%s]\n", "I am a string !");
+
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+
+	/** Testing S with NULL - + return value */
+	printf("\n");
+	len = _printf("String:[%s]\n", NULL);
+	len2 = printf("String:[%s]\n", NULL);
+
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+
+	/** Testing C with NULL - + return value */
+	printf("\n");
+	len = _printf("Char:[%c]\n", NULL);
+	len2 = printf("Char:[%c]\n", NULL);
+
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
 
 	/** Testing P -  excluded for now*/
 	/** 
