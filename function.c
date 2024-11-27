@@ -11,28 +11,19 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int nb_char_printed = 0;
-	int result_f = 0;
-	int result_ff = 0;
+	int i = 0, nb_char_printed = 0, result_f = 0, result_ff = 0;
 	int (*f)(va_list);
-	int (*ff)(void);
 	va_list ap;
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(ap, format);
-
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '\\')
 		{
 			i++;
-			ff = get_slash(format[i]);
-			if (ff == NULL)
-				return (-1);
-			result_ff = ff();
+			result_ff = get_slash(format[i])();
 			nb_char_printed += result_ff;
 		}
 		else if (format[i] == '%')
@@ -58,7 +49,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			nb_char_printed++;
 		}
-		i++;
 	}
 	return (nb_char_printed);
 }

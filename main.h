@@ -28,11 +28,27 @@ int slashslash(void);
 int slashdoublequote(void);
 int slashsinglequote(void);
 
+/**
+ * struct printf - combi format specifier - print function
+ * @op: letter
+ * @f: function pointer that will handle printing and return nb of printed char
+ *
+ * structure handling the combination of format specifiers and print functions
+ */
+
 typedef struct printf
 {
 	char op;
 	int (*f)(va_list p);
 } print;
+
+/**
+ * struct slashstruc - combi letter after \ - print function
+ * @op: letter
+ * @f: function pointer that will handle printing and return nb of printed char
+ *
+ * structure handling the combination of letter afetr \ and print functions
+ */
 
 typedef struct slashstruc
 {

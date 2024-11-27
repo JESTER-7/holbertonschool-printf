@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * get_slash - print a \ or a \?
- * @c: the character
+ * get_slash - handling action with backslashes
+ * @c: the character afetr the backslash
+ *
+ * Return: a function pointer handling special characters
  */
 
 int (*get_slash(char c))(void)
@@ -29,30 +31,4 @@ int (*get_slash(char c))(void)
 			return (array[i].f);
 	}
 	return (NULL);
-
 }
-
-
-
-/** 
-
-	if (c == 'n')
-		_putchar('\n');
-	else if (c == 'a')
-		_putchar('\a');
-	else if (c == 'b')
-		_putchar('\b');
-	else if (c == 'f')
-		_putchar('\f');
-	else if (c == 'r')
-		_putchar('\r');
-	else if (c == 't')
-		_putchar('\t');
-	else if (c == 'v')
-		_putchar('\v');
-	else
-		_putchar(c);
-    return (1);
-}
-
-*/

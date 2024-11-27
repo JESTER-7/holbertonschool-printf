@@ -9,7 +9,7 @@
 int percent(va_list ap)
 {
 	(void)ap;
-	
+
 	_putchar('%');
 	return (1);
 }

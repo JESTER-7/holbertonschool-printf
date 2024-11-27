@@ -9,7 +9,7 @@
  */
 
 /** TEST FILE - CHANGE NAME FUNCTION BACK TO MAIN TO USE THIS TEST FILE */
-int test(void)
+int main(void)
 {
 	int len;
 	int len2;
@@ -114,6 +114,20 @@ int test(void)
 	printf("\n");
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
+
+	/** Testing format = NULL */
+	printf("\n");
+	len = printf(NULL);
+	len2 = _printf(NULL);
+	printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
+
+	/** Testing slash */
+	printf("\n");
+	len = printf("Try to print a single quote \'\n");
+	len2 = _printf("Try to print a single quote \'\n");
+	printf("Len:[%d]\n", len);
+	printf("Len:[%d]\n", len2);
 
     return (0);
 }
