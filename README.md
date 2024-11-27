@@ -29,7 +29,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c`
 * No more than 5 functions per file (the reason of the 2 slach files)
 
 ## **Exemples**
-Here we can see the printf function print a string :
+Here we can see the printf function print an int :
 ```#include <main.h>
 /**
 * main - printf Exemples
@@ -37,11 +37,41 @@ Here we can see the printf function print a string :
 */
 int main (void)
 {
+    int i;
+
     i = 78;
     _printf("%d", i);
     Return (0);
 }
-stdout: 78```
-
+stdout: 78
+```
+Here there is a string :
+```#include <main.h>
+/**
+* main - printf Exemples
+* Return: 0
+*/
+int main (void)
+{
+    char *s;
+    s = "Hello world!";
+    _printf("%s", s);
+    Return (0);
+}
+stdout: Hello world!
+```
+I will show you a last exemple with a %:
+```#include <main.h>
+/**
+* main - printf Exemples
+* Return: 0
+*/
+int main (void)
+{
+    _printf("%%");
+    Return (0);
+}
+stdout: %
+```
 #### *Authors*
 Korneel Loy - Arthur Urbano
