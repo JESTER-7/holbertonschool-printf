@@ -19,13 +19,13 @@ int (*get_function(char s))(va_list)
 		{'i', integerten},
 		{'\0', NULL}
 	};
-	int i = 0;
+	int i;
 
-	while (array[i].op != '\0' && (array[i].op) != s)
-		i++;
-
-	if ((array[i].op) == s)
-		return (array[i].f);
+	for (i = 0; array[i].op != '\0'; i++)
+	{
+		if ((array[i].op) == s)
+			return (array[i].f);
+	}
 
 	return (NULL);
 }
