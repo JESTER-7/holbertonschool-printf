@@ -53,12 +53,21 @@ int test(void)
 	printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 
-	/** Testing O -  excluded for now*/
-	/** 
+	/** Testing O -  */
+
 	printf("\n");
-	_printf("Unsigned octal:[%o]\n", ui);
-	printf("Unsigned octal:[%o]\n", ui);
-	*/
+	len = _printf("Unsigned octal:[%o]\n", ui);
+	len2 = printf("Unsigned octal:[%o]\n", ui);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+	/** Testing O -  */
+
+	printf("\n");
+	len = _printf("Unsigned octal:[%o]\n", -102);
+	len2 = printf("Unsigned octal:[%o]\n", -102);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
 
 	/** Testing X -  excluded for now*/
 	/** 

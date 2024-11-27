@@ -19,6 +19,7 @@ int (*get_function(char s))(va_list)
 		{'i', integerten},
 		{'b', int_to_binary},
 		{'u', unsigned_int},
+		{'o', int_to_octal},
 		{'\0', NULL}
 	};
 	int i;
