@@ -14,8 +14,9 @@ int test(void)
 	int len;
 	int len2;
 
-	/** unused variables, for now 
 	unsigned int ui;
+
+	/** unused variables, for now
 	void *addr;
 	*/
 
@@ -23,8 +24,8 @@ int test(void)
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 
-	/** unused variables, for now 
 	ui = (unsigned int)INT_MAX + 1024;
+	/** unused variables, for now 
 	addr = (void *)0x7ffe637541f0;
 	*/
 
@@ -40,13 +41,18 @@ int test(void)
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
 
-	/** Testing U -  excluded for now*/
-	/** 
+	/** Testing U - max */
 	printf("\n");
-	_printf("Unsigned:[%u]\n", ui);
 	printf("Unsigned:[%u]\n", ui);
-	*/
-	
+	_printf("Unsigned:[%u]\n", ui);
+
+	/** Testing U*/
+	printf("\n");
+	len = printf("Unsigned:[%u]\n", 102);
+	len2 = _printf("Unsigned:[%u]\n", 102);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
 	/** Testing O -  excluded for now*/
 	/** 
 	printf("\n");
@@ -133,8 +139,8 @@ int test(void)
 
 	/** Testing b */
 	printf("\n");
-	len = printf("%b\n", -1550);
-	len2 = _printf("%b\n", -1550);
+	len = printf("%b\n", 15);
+	len2 = _printf("%b\n", 15);
 	printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 

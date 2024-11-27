@@ -3,40 +3,35 @@
 #include <limits.h>
 #include <stdio.h>
 
-
 /**
- * checknumber - calculating binary from decimal (except first 1)
+ * printDecimal - printing dec nb
  * @nb: decimal number
  *
  * Return: nb of characters printed
  */
 
-int checknumber(unsigned int nb)
+int printDecimal(unsigned int nb)
 {
 	int reminder = 0;
 
-	if (nb == 1)
+	if (nb < 1)
 		return (1);
 
-	reminder = nb % 2;
+	reminder = nb % 10;
 
-	if (reminder == 1)
-		nb--;
+	nb = nb / 10;
 
-	nb = nb / 2;
-
-	return (checknumber(nb) + _putchar(reminder + 48));
-
+	return (printDecimal(nb) + _putchar(reminder + 48));
 }
 
 /**
- * int_to_binary - prints a binary number to stout
+ * unsigned_int - prints an unsigned int to stout
  * @ap: list with variadic arguments, expected to a be an unsigned int
  *
- * Return: nb of characters printed
+ * Return: nb of printed char
  */
 
-int int_to_binary(va_list ap)
+int unsigned_int(va_list ap)
 {
 	int nb_char_printed = 0;
 	unsigned int number = (unsigned int)va_arg(ap, int);
@@ -47,9 +42,6 @@ int int_to_binary(va_list ap)
 		return (1);
 	}
 
-	_putchar(49);
-	nb_char_printed++;
-
-	nb_char_printed = checknumber(number);
+	nb_char_printed = printDecimal(number) - 1;
 	return (nb_char_printed);
 }
