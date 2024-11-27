@@ -69,12 +69,19 @@ int test(void)
 	printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 
-	/** Testing X -  excluded for now*/
-	/** 
+	/** Testing X -  */
+
 	printf("\n");
-	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	*/
+	len = printf("Unsigned hexadecimal:[%x]\n", 33);
+	len2 = _printf("Unsigned hexadecimal:[%x]\n", 33);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+
+	printf("\n");
+	printf("ui = %u\n", ui);
+	_printf("Unsigned hexadecimal:[%x][%X]\n", ui, ui);
+	printf("Unsigned hexadecimal:[%x][%X]\n", ui, ui);
 
 	/** Testing C - character */
 	printf("\n");

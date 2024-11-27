@@ -12,16 +12,16 @@
 
 int printDecimal(unsigned int nb)
 {
-	int reminder = 0;
+	int remainder = 0;
 
 	if (nb < 1)
 		return (1);
 
-	reminder = nb % 10;
+	remainder = nb % 10;
 
 	nb = nb / 10;
 
-	return (printDecimal(nb) + _putchar(reminder + 48));
+	return (printDecimal(nb) + _putchar(remainder + 48));
 }
 
 /**

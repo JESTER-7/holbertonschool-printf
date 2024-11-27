@@ -13,19 +13,19 @@
 
 int checknumber(unsigned int nb)
 {
-	int reminder = 0;
+	int remainder = 0;
 
 	if (nb == 1)
 		return (1);
 
-	reminder = nb % 2;
+	remainder = nb % 2;
 
-	if (reminder == 1)
+	if (remainder == 1)
 		nb--;
 
 	nb = nb / 2;
 
-	return (checknumber(nb) + _putchar(reminder + 48));
+	return (checknumber(nb) + _putchar(remainder + 48));
 
 }
 

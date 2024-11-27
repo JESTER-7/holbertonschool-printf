@@ -19,6 +19,8 @@ int print_integerten(int integer);
 int int_to_binary(va_list ap);
 int unsigned_int(va_list ap);
 int int_to_octal(va_list ap);
+int int_to_hexa_lower(va_list ap);
+int int_to_hexa_upper(va_list ap);
 
 int slashn(void);
 int slasha(void);

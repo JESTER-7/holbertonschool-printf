@@ -20,6 +20,8 @@ int (*get_function(char s))(va_list)
 		{'b', int_to_binary},
 		{'u', unsigned_int},
 		{'o', int_to_octal},
+		{'x', int_to_hexa_lower},
+		{'X', int_to_hexa_upper},
 		{'\0', NULL}
 	};
 	int i;

@@ -13,16 +13,16 @@
 
 int octalnumber(unsigned int nb)
 {
-	int reminder = 0;
+	int remainder = 0;
 
 	if (nb < 1)
 		return (1);
 
-	reminder = nb % 8;
+	remainder = nb % 8;
 
 	nb = nb / 8;
 
-	return (octalnumber(nb) + _putchar(reminder + 48));
+	return (octalnumber(nb) + _putchar(remainder + 48));
 }
 
 /**
