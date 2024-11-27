@@ -133,7 +133,8 @@ int test(void)
 
 	/** Testing b */
 	printf("\n");
-	_printf("%b\n", 101);
+	len = _printf("%b\n", 101);
+	printf("Len:[%d]\n", len);
 
     return (0);
 }

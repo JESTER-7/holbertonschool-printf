@@ -5,12 +5,13 @@
  * checknumber - calculating binary from decimal (except first 1)
  * @nb: decimal number
  *
- * Return: recursive function: 1 if finished and prints in reverse order
+ * Return: nb of characters printed
  */
 
 int checknumber(int nb)
 {
 	int reminder = 0;
+	int nb_char_printed = 0;
 
 	if (nb == 1)
 		return (1);
@@ -22,7 +23,11 @@ int checknumber(int nb)
 
 	nb = nb / 2;
 
+	nb_char_printed++;
+
 	return (checknumber(nb) + _putchar(reminder + 48));
+
+	return (nb_char_printed);
 }
 
 /**
@@ -34,9 +39,12 @@ int checknumber(int nb)
 
 int int_to_binary(va_list ap)
 {
+	int nb_char_printed = 0;
 	unsigned int number = va_arg(ap, int);
 
 	_putchar(49);
-	checknumber(number);
-	return (1);
+	nb_char_printed++;
+
+	nb_char_printed = checknumber(number);
+	return (nb_char_printed);
 }
