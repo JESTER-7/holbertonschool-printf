@@ -1,5 +1,8 @@
 #include "main.h"
 #include <stdarg.h>
+#include <limits.h>
+#include <stdio.h>
+
 
 /**
  * checknumber - calculating binary from decimal (except first 1)
@@ -8,7 +11,7 @@
  * Return: nb of characters printed
  */
 
-int checknumber(int nb)
+int checknumber(unsigned int nb)
 {
 	int reminder = 0;
 	int nb_char_printed = 0;
@@ -40,12 +43,9 @@ int checknumber(int nb)
 int int_to_binary(va_list ap)
 {
 	int nb_char_printed = 0;
-	int number = va_arg(ap, int);
+	unsigned int number = (unsigned int)va_arg(ap, int);
 
-	if (number < 0)
-		return (-1);
-
-	else if (number == 0)
+	if (number == 0)
 	{
 		_putchar(48);
 		return (1);
