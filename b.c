@@ -40,7 +40,16 @@ int checknumber(int nb)
 int int_to_binary(va_list ap)
 {
 	int nb_char_printed = 0;
-	unsigned int number = va_arg(ap, int);
+	int number = va_arg(ap, int);
+
+	if (number < 0)
+		return (-1);
+
+	else if (number == 0)
+	{
+		_putchar(48);
+		return (1);
+	}
 
 	_putchar(49);
 	nb_char_printed++;
