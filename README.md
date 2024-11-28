@@ -14,7 +14,8 @@ The printf project ask us to recreate the printf function, in particular these c
 * `%d`: Print an integer
 * `%i`: Print an integer base 10
 * `%%`: Print %
-We also do a man page, we will see it later int the readme. 
+
+We also do a man page, we will see it later in the readme. 
 
 ## **Compilation command**
 The program will be compiled with this function :
@@ -23,9 +24,9 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c`
 ```
 ## **Requirements**
 * Allowed editors: vi, vim, emacs
-* All your files will be compiled on Ubuntu 20.04 LTS using gcc
-* Your code should use the Betty style.
-* You are not allowed to use global variables
+* All the files will be compiled on Ubuntu 20.04 LTS using gcc
+* The code should use the Betty style.
+* I am not allowed to use global variables
 * No more than 5 functions per file (the reason of the 2 slach files)
 
 ## **Exemples**
@@ -73,5 +74,8 @@ int main (void)
 }
 stdout: %
 ```
+
+## **Man page**
+
 #### *Authors*
 Korneel Loy - Arthur Urbano
