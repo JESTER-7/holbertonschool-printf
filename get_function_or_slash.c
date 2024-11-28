@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdio.h>
-
 /**
  * get_function - gets the corresponding function
  * @s: the  corresponding character
@@ -32,5 +29,38 @@ int (*get_function(char s))(va_list)
 			return (array[i].f);
 	}
 
+	return (NULL);
+}
+
+/**
+ * get_slash - handling action with backslashes
+ * @c: the character afetr the backslash
+ *
+ * Return: a function pointer handling special characters
+ */
+
+int (*get_slash(char c))(void)
+{
+	slash array[] = {
+		{'n', slashn},
+		{'a', slasha},
+		{'b', slashb},
+		{'f', slashf},
+		{'r', slashr},
+		{'t', slasht},
+		{'v', slashv},
+		{'\\', slashslash},
+		{'\"', slashdoublequote},
+		{'\'', slashsinglequote},
+		{'\0', NULL}
+	};
+
+	int i = 0;
+
+	for (i = 0; array[i].op != '\0'; i++)
+	{
+		if ((array[i].op) == c)
+			return (array[i].f);
+	}
 	return (NULL);
 }

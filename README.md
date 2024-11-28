@@ -1,13 +1,13 @@
 # PRINTF FUNCTION  
 ## Plan
 #### 1 - Description
-#### 2 - The compilation
+#### 2 - Compilation
 #### 3 - Requirements
-#### 4 - Exemples
+#### 4 - Examples
 #### 5 - Flowchart
 
 ## **Description**
-The printf project ask us to recreate the printf function, in particular these conversion specifiers :
+The printf project asks us to recreate the printf function, in particular these conversion specifiers :
 * `%c`: Print a char
 * `%s`: Print a string
 * `%d`: Print an integer
@@ -26,13 +26,13 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c`
 * All the files will be compiled on Ubuntu 20.04 LTS using gcc
 * The code should use the Betty style.
 * I am not allowed to use global variables
-* No more than 5 functions per file (the reason of the 2 slach files)
+* No more than 5 functions per file (the reason of the 2 slash files)
 
-## **Exemples**
+## **Examples**
 Here we can see the printf function print an int :
 ```#include <main.h>
 /**
-* main - printf Exemples
+* main - printf Examples
 * Return: 0
 */
 int main (void)
@@ -48,7 +48,7 @@ stdout: 78
 Here there is a string :
 ```#include <main.h>
 /**
-* main - printf Exemples
+* main - printf Examples
 * Return: 0
 */
 int main (void)
@@ -63,7 +63,7 @@ stdout: Hello world!
 I will show you a last exemple with a %:
 ```#include <main.h>
 /**
-* main - printf Exemples
+* main - printf Examples
 * Return: 0
 */
 int main (void)
