@@ -9,7 +9,7 @@
  */
 
 /** TEST FILE - CHANGE NAME FUNCTION BACK TO MAIN TO USE THIS TEST FILE */
-int main(void)
+int test(void)
 {
 	int len;
 	int len2;
