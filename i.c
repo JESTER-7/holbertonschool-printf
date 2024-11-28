@@ -7,12 +7,7 @@
 int print_integerten(int integer)
 {
 	int remainder = 0;
-
-	if (integer == 0)
-    {
-        _putchar('0');
-        return (1);
-    }    
+    
 	if (integer  < 0)
     {
         _putchar('-');
@@ -34,6 +29,11 @@ int integerten(va_list ap)
     int a, nb_int = 0;
 	a = va_arg(ap, int);
 	nb_int = print_integerten(a);
+	if (a == 0)
+    {
+        _putchar('0');
+        return (1);
+    }
 	if (a > 0)
 		nb_int = nb_int - 1;
 	return (nb_int);
