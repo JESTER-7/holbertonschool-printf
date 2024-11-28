@@ -1,40 +1,36 @@
 #include "main.h"
 /**
- * integerten - print integer in base 10
- * @ap: list with variadic arguments, expected to a be int
- * Return: i
- */
-int integerten(va_list ap)
-{
-	int integer = va_arg(ap, int);
-	int i = 0;
-
-	if (integer < 0)
-	{
-		_putchar('-');
-		i++;
-		integer = -integer;
-	}
-	if (integer == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
-	i += print_integer(i);
-	return (i);
-}
-/**
- * print_integer - print integer digit by digit
+ * print_integerten - print integer digit by digit
  * @integer: integer
  * Return: i
  */
 int print_integerten(int integer)
 {
 	int i = 0;
+	unsigned int j;
 
-	if (integer / 10)
-		i += print_integer(integer / 10);
-	_putchar((integer % 10) + '0');
-	i++;
+	if (integer  < 0)
+	{
+		_putchar('-');
+		i++;
+		j = -integer;
+	}
+	else
+		j = integer;
+	if (j / 10)
+		i += print_integerten(j / 10);
+	_putchar((j % 10) + '0');
 	return (i);
+}
+/**
+ * integer - print integerten
+ * @ap: list with variadic arguments, expected to a be int
+ * Return: print_integerten function
+ */
+int integerten(va_list ap)
+{
+	int a;
+
+	a = va_arg(ap, int);
+	return (print_integerten(a));
 }
