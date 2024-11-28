@@ -14,8 +14,9 @@ int main(void)
 	int len;
 	int len2;
 
-	/** unused variables, for now 
 	unsigned int ui;
+
+	/** unused variables, for now
 	void *addr;
 	*/
 
@@ -23,8 +24,8 @@ int main(void)
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 
-	/** unused variables, for now 
 	ui = (unsigned int)INT_MAX + 1024;
+	/** unused variables, for now 
 	addr = (void *)0x7ffe637541f0;
 	*/
 
@@ -40,26 +41,47 @@ int main(void)
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
 
-	/** Testing U -  excluded for now*/
-	/** 
+	/** Testing U - max */
 	printf("\n");
-	_printf("Unsigned:[%u]\n", ui);
 	printf("Unsigned:[%u]\n", ui);
-	*/
-	
-	/** Testing O -  excluded for now*/
-	/** 
-	printf("\n");
-	_printf("Unsigned octal:[%o]\n", ui);
-	printf("Unsigned octal:[%o]\n", ui);
-	*/
+	_printf("Unsigned:[%u]\n", ui);
 
-	/** Testing X -  excluded for now*/
-	/** 
+	/** Testing U*/
 	printf("\n");
-	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	*/
+	len = printf("Unsigned:[%u]\n", 102);
+	len2 = _printf("Unsigned:[%u]\n", 102);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+	/** Testing O -  */
+
+	printf("\n");
+	len = _printf("Unsigned octal:[%o]\n", ui);
+	len2 = printf("Unsigned octal:[%o]\n", ui);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+	/** Testing O -  */
+
+	printf("\n");
+	len = _printf("Unsigned octal:[%o]\n", -102);
+	len2 = printf("Unsigned octal:[%o]\n", -102);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+	/** Testing X -  */
+
+	printf("\n");
+	len = printf("Unsigned hexadecimal:[%x]\n", 33);
+	len2 = _printf("Unsigned hexadecimal:[%x]\n", 33);
+	printf("Length:[%d, %i]\n", len, len);
+	printf("Length:[%d, %i]\n", len2, len2);
+
+
+	printf("\n");
+	printf("ui = %u\n", ui);
+	_printf("Unsigned hexadecimal:[%x][%X]\n", ui, ui);
+	printf("Unsigned hexadecimal:[%x][%X]\n", ui, ui);
 
 	/** Testing C - character */
 	printf("\n");
@@ -133,8 +155,8 @@ int main(void)
 
 	/** Testing b */
 	printf("\n");
-	len = printf("%b\n", -1550);
-	len2 = _printf("%b\n", -1550);
+	len = printf("%b\n", 15);
+	len2 = _printf("%b\n", 15);
 	printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 

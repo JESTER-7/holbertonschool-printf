@@ -5,38 +5,34 @@
 
 
 /**
- * checknumber - calculating binary from decimal (except first 1)
+ * octalnumber - calculating octal from decimal
  * @nb: decimal number
  *
  * Return: nb of characters printed
  */
 
-int checknumber(unsigned int nb)
+int octalnumber(unsigned int nb)
 {
 	int remainder = 0;
 
-	if (nb == 1)
+	if (nb < 1)
 		return (1);
 
-	remainder = nb % 2;
+	remainder = nb % 8;
 
-	if (remainder == 1)
-		nb--;
+	nb = nb / 8;
 
-	nb = nb / 2;
-
-	return (checknumber(nb) + _putchar(remainder + 48));
-
+	return (octalnumber(nb) + _putchar(remainder + 48));
 }
 
 /**
- * int_to_binary - prints a binary number to stout
+ * int_to_octal - prints a decimal number to stout in octal version
  * @ap: list with variadic arguments, expected to a be an unsigned int
  *
  * Return: nb of characters printed
  */
 
-int int_to_binary(va_list ap)
+int int_to_octal(va_list ap)
 {
 	int nb_char_printed = 0;
 	unsigned int number = (unsigned int)va_arg(ap, int);
@@ -47,9 +43,6 @@ int int_to_binary(va_list ap)
 		return (1);
 	}
 
-	_putchar(49);
-	nb_char_printed++;
-
-	nb_char_printed = checknumber(number);
-	return (nb_char_printed);
+	nb_char_printed = octalnumber(number);
+	return (nb_char_printed - 1);
 }
