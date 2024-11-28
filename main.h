@@ -17,14 +17,10 @@ int (*get_slash(char c))(void);
 int print_integer(int integer);
 int print_integerten(int integer);
 int int_to_binary(va_list ap);
-<<<<<<< HEAD
-int test(void);
-=======
 int unsigned_int(va_list ap);
 int int_to_octal(va_list ap);
 int int_to_hexa_lower(va_list ap);
 int int_to_hexa_upper(va_list ap);
->>>>>>> eeefaa43a9394c9c34254c0605ffcae7bf093300
 
 int slashn(void);
 int slasha(void);
