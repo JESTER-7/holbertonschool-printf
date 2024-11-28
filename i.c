@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * print_integerten - print integer digit by digit
  * @integer: integer
@@ -8,15 +9,18 @@ int print_integerten(int integer)
 {
 	int remainder = 0;
     
-	if (integer  < 0)
+	if (integer  < 0 && integer != INT_MIN)
     {
         _putchar('-');
         integer = 0 - integer;
-    }    
-	if (integer < 1)
+    }
+
+	if (integer < 1 && integer != INT_MIN)
         return (1);
 	remainder = integer % 10;
-	integer = integer / 10;    
+	if (remainder < 0)
+		remainder = 0 - remainder;
+	integer = integer / 10; 
 	return (print_integerten(integer) + _putchar(remainder + 48));
 }
 /**
@@ -27,6 +31,7 @@ int print_integerten(int integer)
 int integerten(va_list ap)
 {
     int a, nb_int = 0;
+	
 	a = va_arg(ap, int);
 	nb_int = print_integerten(a);
 	if (a == 0)
