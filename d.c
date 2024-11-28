@@ -17,9 +17,9 @@ int print_integer(int integer)
 	}
 	else
 		j = integer;
-	if (j / 10)
-		i += print_integer(j / 10);
-	_putchar((j % 10) + '0');
+	if (j / 10) /* is not 0 */
+		i += print_integer(j / 10); /* print recursively */
+	_putchar((j % 10) + '0'); /* print the last digit */
 	return (i);
 }
 /**
