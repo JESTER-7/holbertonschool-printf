@@ -75,6 +75,6 @@ stdout: %
 ```
 
 ## **Flowchart**
-![flowchart](Sans titre.jpg)
+![flowchart](holbertonschool-printf/Sans titre.jpg)
 #### *Authors*
 Korneel Loy - Arthur Urbano
