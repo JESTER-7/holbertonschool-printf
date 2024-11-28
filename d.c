@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * print_integer - print integer digit by digit
  * @integer: integer
@@ -7,16 +8,19 @@
 int print_integer(int integer)
 {
 	int remainder = 0;
-	int min = -2147483648;
    
-	if (integer  < 0 && integer != min)
+	if (integer  < 0 && integer != INT_MIN)
     {
         _putchar('-');
         integer = 0 - integer;
-    }    
-	if (integer < 1)
+    }
+	
+
+	if (integer < 1 && integer != INT_MIN)
         return (1);
 	remainder = integer % 10;
+	if (remainder < 0)
+		remainder = 0 - remainder;
 	integer = integer / 10;    
 	return (print_integer(integer) + _putchar(remainder + 48));
 }

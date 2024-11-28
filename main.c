@@ -33,7 +33,7 @@ int test(void)
 	printf("Length:[%d, %i]\n", INT_MIN, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 
-	_printf("Length:[%d, %i]\n", 1024, len);
+	_printf("Length:[%d, %i]\n", INT_MIN, len);
 	_printf("Length:[%d, %i]\n", len2, len2);
 
 	/** Testing D - negatie value */
