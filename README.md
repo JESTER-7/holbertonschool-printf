@@ -75,6 +75,6 @@ stdout: %
 ```
 
 ## **Flowchart**
-![flowchart]()
+![flowchart](flowchart.drawio.png)
 #### *Authors*
 Korneel Loy - Arthur Urbano
