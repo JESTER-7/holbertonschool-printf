@@ -4,8 +4,7 @@
 #### 2 - The compilation
 #### 3 - Requirements
 #### 4 - Exemples
-#### 5 - Man page
-#### 6 - Flowchart
+#### 5 - Flowchart
 
 ## **Description**
 The printf project ask us to recreate the printf function, in particular these conversion specifiers :
@@ -75,7 +74,7 @@ int main (void)
 stdout: %
 ```
 
-## **Man page**
+## **Flowchart**
 
 #### *Authors*
 Korneel Loy - Arthur Urbano
