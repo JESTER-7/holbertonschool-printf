@@ -6,31 +6,35 @@
  */
 int print_integerten(int integer)
 {
-	int i = 0;
-	unsigned int j;
+	int remainder = 0;
 
+	if (integer == 0)
+    {
+        _putchar('0');
+        return (1);
+    }    
 	if (integer  < 0)
-	{
-		_putchar('-');
-		i++;
-		j = -integer;
-	}
-	else
-		j = integer;
-	if (j / 10)
-		i += print_integerten(j / 10);
-	_putchar((j % 10) + '0');
-	return (i);
+    {
+        _putchar('-');
+        integer = 0 - integer;
+    }    
+	if (integer < 1)
+        return (1);
+	remainder = integer % 10;
+	integer = integer / 10;    
+	return (print_integerten(integer) + _putchar(remainder + 48));
 }
 /**
- * integer - print integerten
+ * integer - print integer
  * @ap: list with variadic arguments, expected to a be int
- * Return: print_integerten function
+ * Return: print_integer function
  */
 int integerten(va_list ap)
 {
-	int a;
-
+    int a, nb_int = 0;
 	a = va_arg(ap, int);
-	return (print_integerten(a));
+	nb_int = print_integerten(a);
+	if (a > 0)
+		nb_int = nb_int - 1;
+	return (nb_int);
 }

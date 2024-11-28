@@ -6,21 +6,23 @@
  */
 int print_integer(int integer)
 {
-	int i = 0;
-	unsigned int j;
+	int remainder = 0;
 
+	if (integer == 0)
+    {
+        _putchar('0');
+        return (1);
+    }    
 	if (integer  < 0)
-	{
-		_putchar('-');
-		i++;
-		j = -integer;
-	}
-	else
-		j = integer;
-	if (j / 10) /* is not 0 */
-		i += print_integer(j / 10); /* print recursively */
-	_putchar((j % 10) + '0'); /* print the last digit */
-	return (i);
+    {
+        _putchar('-');
+        integer = 0 - integer;
+    }    
+	if (integer < 1)
+        return (1);
+	remainder = integer % 10;
+	integer = integer / 10;    
+	return (print_integer(integer) + _putchar(remainder + 48));
 }
 /**
  * integer - print integer
@@ -29,8 +31,10 @@ int print_integer(int integer)
  */
 int integer(va_list ap)
 {
-	int a;
-
+    int a, nb_int = 0;
 	a = va_arg(ap, int);
-	return (print_integer(a));
+	nb_int = print_integer(a);
+	if (a > 0)
+		nb_int = nb_int - 1;
+	return (nb_int);
 }
