@@ -32,7 +32,9 @@ int _printf(const char *format, ...)
 			f = get_function(format[i]);
 			if (f == NULL)
 			{
-				return (-1);
+				_putchar('%');
+				_putchar(format[i]);
+				nb_char_printed = nb_char_printed + 2;
 			}
 			else
 			{
