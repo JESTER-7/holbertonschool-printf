@@ -22,7 +22,7 @@ int print_integerten(int integer)
 /**
  * integer - print integer
  * @ap: list with variadic arguments, expected to a be int
- * Return: print_integer function
+ * Return: print_integerten function
  */
 int integerten(va_list ap)
 {

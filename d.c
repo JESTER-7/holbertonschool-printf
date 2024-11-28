@@ -7,8 +7,9 @@
 int print_integer(int integer)
 {
 	int remainder = 0;
+	int min = -2147483648;
    
-	if (integer  < 0)
+	if (integer  < 0 && integer != min)
     {
         _putchar('-');
         integer = 0 - integer;
