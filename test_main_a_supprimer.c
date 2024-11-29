@@ -20,6 +20,13 @@ int test(void)
 	void *addr;
 	*/
 
+	/** Testing % alone */
+	len = printf("%\n");
+	len2 = _printf("%\n");
+
+	printf("%d\n", len);
+	printf("%d\n", len2);
+
 	/** Testing S - string */
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
