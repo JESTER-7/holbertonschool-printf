@@ -9,7 +9,7 @@
  */
 
 /** TEST FILE - CHANGE NAME FUNCTION BACK TO MAIN TO USE THIS TEST FILE */
-int test(void)
+int main(void)
 {
 	int len;
 	int len2;
@@ -21,11 +21,14 @@ int test(void)
 	*/
 
 	/** Testing % alone */
-	len = printf("%\n");
-	len2 = _printf("%\n");
+	char *test = "%";
+	len = printf(test);
+	len2 = _printf(test);
 
-	printf("%d\n", len);
-	printf("%d\n", len2);
+
+
+	printf("printf : %d\n", len);
+	printf("_printf : %d\n", len2);
 
 	/** Testing S - string */
 	len = _printf("Let's try to printf a simple sentence.\n");
