@@ -29,11 +29,8 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '\0')
-			{
 				_putchar('%');
-				return (nb_char_printed);
-			}
-			if (get_function(format[i]) == NULL)
+			else if (get_function(format[i]) == NULL)
 			{
 				_putchar('%');
 				_putchar(format[i]);
