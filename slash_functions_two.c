@@ -24,7 +24,7 @@ int slashv(void)
 
 
 /**
- * slashslash - prints \
+ * slashslash - prints a slash
  * Return: 1 on succes
  */
 
